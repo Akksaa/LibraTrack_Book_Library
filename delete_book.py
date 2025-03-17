@@ -11,7 +11,7 @@ my_db = myconn.connect(
 
 db_cursor = my_db.cursor()
 
-def delete_book(title):
+def delete_book_from_lib(title):
     sql = "delete from books where title=%s"
     val = (title,)
 

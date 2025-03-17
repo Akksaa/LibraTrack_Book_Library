@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 import time
-from delete_book import delete_book
+from delete_book import delete_book_from_lib
 from insert import add_book
 from select2 import get_all_books
 import plotly.express as px
@@ -143,7 +143,7 @@ with tabs[3]:
             remove_book = remove_input.lower()
             if st.button("Remove Book", key=f"{book['id']}"):
                 with st.spinner(f"Deleting Book '{remove_book.title()}' from library..."):
-                    delete_book(book["title"])
+                    delete_book_from_lib(book["title"])
                     time.sleep(5)
                     st.success(f"Book '{remove_book.title()}' is deleted from library")
         with col2:
