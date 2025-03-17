@@ -1,20 +1,17 @@
 import mysql.connector as myconn
+from config import DATABASE_HOST, DATABASE_NAME, DATABASE_PASSWORD, DATABASE_USER
+
 
 from select2 import get_all_books
 
 my_db = myconn.connect( 
-    host = "localhost",
-    user = "root",
-    password = "Aqsa@5112007",
-    database = "Book_Library"
+    host = DATABASE_HOST,
+    user = DATABASE_USER,
+    password = DATABASE_PASSWORD,
+    database = DATABASE_NAME
 )
 
 db_cursor = my_db.cursor()
-
-# title = input("Book title:")
-# author = input("author:")
-# genre = input("genre:")
-# publication_year = int(input("Publication Year:"))
 
 def add_book(title, author, genre, publication_year, is_read):
     sql = "INSERT INTO books(title, author, genre, publication_year, is_read) VALUES ( %s, %s, %s, %s, %s)"
