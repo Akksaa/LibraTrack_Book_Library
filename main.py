@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 import time
-from delete import delete_book
+from delete_book import delete_book
 from insert import add_book
 from select2 import get_all_books
 import plotly.express as px

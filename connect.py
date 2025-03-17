@@ -10,11 +10,5 @@ my_db = myconn.connect(
     password = DATABASE_PASSWORD,
 )
 
-# my_db = myconn.connect(
-#     host=os.getenv("DATABASE_HOST"),
-#     user=os.getenv("DATABASE_USER"),
-#     password=os.getenv("DATABASE_PASSWORD"),
-# )
-
 
 print(my_db, "connection established...")
