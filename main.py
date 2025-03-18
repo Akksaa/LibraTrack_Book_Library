@@ -29,7 +29,7 @@ def search_books(query, field):
 
 st.title("🏛️📚 LibraTrack ")
 st.subheader("Your Personalized Library 📕🔍")
-tabs = st.tabs(["📗👀 View Books", "📚➕ Add Book", "📘🔍 Search Books", "❌📕 Remove Book", "Analytics"])
+tabs = st.tabs(["📗👀 View Books", "📚➕ Add Book", "📘🔍 Search Books", "❌📕 Remove Book", "📚📊 Analytics"])
 
 # Tab 1: View Books
 with tabs[0]:
@@ -42,6 +42,7 @@ with tabs[0]:
             with st.spinner("Refreshing page..."):
                 time.sleep(5)
                 all_books = get_all_books()
+                print(all_books)
                 st.divider()
                 for i, book in all_books.iterrows():
                     col1, col2, col3 = st.columns([3, 2, 1])
@@ -150,6 +151,7 @@ with tabs[3]:
         with col2:
             st.image("books.png")
        
+#Tab 5: Read/Unread Analytics:
 with tabs[4]:
 
     st.subheader("📊 Read/Unread Analytics")
